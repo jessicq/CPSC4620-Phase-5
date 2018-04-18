@@ -166,25 +166,12 @@ public class Order {
      * @return A string with all order information
      */
     @Override
-    public String toString()
-    {
-        String s = "Order Number: " + Integer.toString(ID) + " Type: " + order_type;
+   public String toSimplePrint()
+   {
+    String s = "Order Number: " + Integer.toString(ID) + " Type: " + order_type;
+    s += " Customer: " + cust.toString();
 
-        s += "\n" + cust.toString();
-
-        s += "\n\nPizzas:\n";
-        for (Pizza p: pizzas)
-        {
-            s += p.toString() + "\n";
-        }
-
-        s += "\nOrder Discounts: \n";
-        for (Discount d : discounts)
-        {
-            s += d.toString() + "\n";
-        }
-
-        s += "\nTotal Order Price: $" + Double.toString(this.calcPrice()) + "\n" ;
-        return s;
-    }
+    s+= " Number of Pizzas: " + Integer.toString(pizzas.size()) + " Price: $" + Double.toString(this.calcPrice()) +     "\n";
+    return s;
+   }
 }
