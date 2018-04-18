@@ -154,7 +154,7 @@ public final class DBNinja {
                 //String status = rset.getString(4);
                 if(rset.next() == "in-progress")
                 {
-                    query = "Update PIZZA Set STATUS = complete;"; //might need to include a Where
+                    query = "Update PIZZA Set STATUS = complete Where"; //need to find out where to connect
                     rs = stmt.executeQuery(query);
                 }
             }
