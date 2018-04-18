@@ -24,9 +24,9 @@ public final class DBNinja {
     //enter your user name here
     private static String user = "Fart";
     //enter your password here
-    private static String password = "ilikepizza2";
+    private static String password = "pizzadb4620";
     //enter your database name here
-    private static String database_name = "PizzeriaDB";
+    private static String database_name = "antonpizza";
     //Do not change the port. 3306 is the default MySQL port
     private static String port = "3306";
     private static Connection conn;
