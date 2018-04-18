@@ -301,10 +301,25 @@ public final class DBNinja {
      */
     public static ArrayList<Discount> getDiscountList() throws SQLException, IOException
     {
+	String query = "Select Dname From DISCOUNT;"
+	    
         ArrayList<Discount> discs = new ArrayList<Discount>();
         connect_to_db();
         //add code to get a list of all discounts
-
+	
+	Statement stmt = conn.createStatement();
+        try {
+            	ResultSet rset = stmt.executeQuery(query);
+		while(rset.next())
+		   discs.insert(rset.next());
+	}
+	    
+	catch (SQLException e) {
+            System.out.println("Error loading Topping");
+            while (e != null) {
+                System.out.println("Message     : " + e.getMessage());
+                e = e.getNextException();
+            }    
 
         conn.close();
         return discs;
