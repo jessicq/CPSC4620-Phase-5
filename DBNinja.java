@@ -137,7 +137,8 @@ public final class DBNinja {
      */
     public static void CompleteOrder(Order o) throws SQLException, IOException
     {
-        String query = "Select STATUS From (PIZZA as P Join BELONGSTO as BT on P.PID=BT.PID) Join ORDERS as OR on BT.ORDERNO=OR.ONUM Where OR.ONUM=o.ID" + o.PID + ";" ;
+        String query = "Select STATUS From (PIZZA as P Join BELONGSTO as BT on P.PID=BT.PID) Join ORDERS as OR on BT.ORDERNO=OR.ONUM 
+			Where OR.ONUM=o.ID" + o.PID + ";";
 
         connect_to_db();
 		/*add code to mark an order as complete in the DB. You may have a boolean field for this, or maybe a completed time timestamp. However you have it, */
@@ -149,8 +150,8 @@ public final class DBNinja {
 
             while(rset.next())
             {
-                String status = rset.getString(4);
-                if(status == "in-progress")
+                //String status = rset.getString(4);
+                if(rset.next() == "in-progress")
                 {
                     query = "Update PIZZA Set STATUS = complete;";
                     rs = stmt.executeQuery(query);
@@ -284,10 +285,25 @@ public final class DBNinja {
      */
     public static double getBasePrice(String size, String crust) throws SQLException, IOException
     {
+	String query = "Select PRICE From BASEPRICE Where SIZE = " + size + "And CRUST = " + CRUST + ";";
+	    
         connect_to_db();
         double bp = 0.0;
         //add code to get the base price for that size and crust pizza Depending on how you store size and crust in your database, you may have to do a conversion
-
+	    
+	Statement stmt = conn.createStatement();
+        try {
+            	ResultSet rset = stmt.executeQuery(query);
+		bp = rset.next();
+	}
+	    
+	catch (SQLException e) {
+            System.out.println("Error loading Topping");
+            while (e != null) {
+                System.out.println("Message     : " + e.getMessage());
+                e = e.getNextException();
+            }        
+	    
         conn.close();
         return bp;
     }
@@ -394,18 +410,20 @@ public final class DBNinja {
         return t;
 
     }
+	    
 /*
     private static Discount getDiscount()  throws SQLException, IOException
     {
 
         //add code to get a discount
+	String query = "Select DNAME From 
 
         Discount D;
 
         return D;
 
     }
-
+	 
     private static Pizza getPizza()  throws SQLException, IOException
     {
 
