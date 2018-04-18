@@ -137,7 +137,8 @@ public final class DBNinja {
      */
     public static void CompleteOrder(Order o) throws SQLException, IOException
     {
-        String query = "Select STATUS From (PIZZA as P Join BELONGSTO as BT on P.PID=BT.PID) Join ORDERS as OR on BT.ORDERNO=OR.ONUM 
+        String query = "Select STATUS 
+			From (PIZZA as P Join BELONGSTO as BT on P.PID=BT.PID) Join ORDERS as OR on BT.ORDERNO=OR.ONUM 
 			Where OR.ONUM=o.ID" + o.PID + ";";
 
         connect_to_db();
@@ -182,6 +183,8 @@ public final class DBNinja {
      */
     public static void AddToInventory(Topping t, double toAdd) throws SQLException, IOException
     {
+ 	String query = "Update TOPPINGS Set INVENTORY = INVENTORY + " + toAdd + "Where NAME=Topping.Name" +  From TOPPINGS";
+	   // Look up Topping Name attribute to get the right attribute, currently substituting to Topping.Name
         connect_to_db();
 		/*add code to add toAdd to the inventory level of T. This is not adding a new topping, it is adding a certain amount of stock for a topping. This would be used to show that an order was made to replenish the restaurants supply of pepperoni, etc*/
         conn.close();
