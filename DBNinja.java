@@ -451,8 +451,8 @@ public final class DBNinja {
     {
         //add code to get Pizza Remember, a Pizza has toppings and discounts on it
         Pizza P;
-	ArrayList <Topping> tops;
-	ArrayList <Discount> disc;
+	ArrayList <Topping> tops = new ArrayList<Topping>();
+	ArrayList <Discount> disc = new ArrayList<Discount>();
 	    
 	String query = "Select PHS.PID, P.SIZE, P.CRUST, BP.PRICE 
 			From PIZZA As P, BASEPRICE as BP, PIZZAHASTOPPINGS as PHS 
