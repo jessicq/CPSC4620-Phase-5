@@ -416,7 +416,8 @@ public final class DBNinja {
 	    
     private static Discount getDiscount()  throws SQLException, IOException
     {
-
+	Discount D;
+	    
         //add code to get a discount
 	String query = "Select * From DISCOUNT;";
 	    
@@ -426,12 +427,12 @@ public final class DBNinja {
             //even if you only have one result, you still need to call ResultSet.next() to load the first tuple
             while(rset.next())
             {
-		    			String ID = rset.getString(1);
+		    			String DID = rset.getString(1);
 					String dname = rset.getString(2);
 					double percent = rset.getDouble(3);
 					double dollar = rset.getDouble(4);
 					
-					D = new Discount(dname, percent, dollar, ID);
+					D = new Discount(dname, percent, dollar, DID);
 			}
 			
 		}
@@ -442,17 +443,46 @@ public final class DBNinja {
                 e = e.getNextException();
             }
 
-        Discount D;
-
         return D;
 
     }
 	 
     private static Pizza getPizza()  throws SQLException, IOException
     {
-
         //add code to get Pizza Remember, a Pizza has toppings and discounts on it
         Pizza P;
+	ArrayList <Topping> tops;
+	ArrayList <Discount> disc;
+	    
+	String query = "Select PHS.PID, P.SIZE, P.CRUST, BP.PRICE 
+			From PIZZA As P, BASEPRICE as BP, PIZZAHASTOPPINGS as PHS 
+			Where PHS.PID=P.PID And P.BID=BP.BID;";
+	    
+	Statement stmt = conn.createStatement();
+        try {
+            ResultSet rset = stmt.executeQuery(query);
+            //even if you only have one result, you still need to call ResultSet.next() to load the first tuple
+            while(rset.next())
+            {
+		    			String PID = rset.getString(1);
+					String sz = rset.getString(2);
+					double crus = rset.getString(3);
+					double bp = rset.getDouble(4);
+		    			tops.getTopping(PID);
+		    			disc.getDiscount();
+					
+					P = new Discount(PID, sz, crus, tops, disc, BID);
+			}
+			
+		}
+		catch (SQLException e) {
+            System.out.println("Error loading Discount");
+            while (e != null) {
+                System.out.println("Message     : " + e.getMessage());
+                e = e.getNextException();
+            }
+   
+	
 
         return P;
 
