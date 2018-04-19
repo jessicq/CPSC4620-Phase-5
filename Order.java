@@ -13,7 +13,7 @@ import java.util.*;
 
 
 public class Order {
-    private int ID;
+    private String ID;
     private ICustomer cust;
     private String order_type; //pick-up, delivery, dine-in
     private ArrayList<Pizza> pizzas;
