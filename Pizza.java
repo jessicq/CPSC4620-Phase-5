@@ -10,7 +10,7 @@ import java.util.*;
  *              baseprice is the base price for that size and crust
  */
 public class Pizza {
-    private int ID;
+    private String ID;
     private String size;
     private String crust;
     private ArrayList<Topping> toppings;
