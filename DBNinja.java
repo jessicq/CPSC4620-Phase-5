@@ -301,7 +301,7 @@ public final class DBNinja {
 	}
 	    
 	catch (SQLException e) {
-            System.out.println("Error loading Topping");
+            System.out.println("Error loading Base Price");
             while (e != null) {
                 System.out.println("Message     : " + e.getMessage());
                 e = e.getNextException();
@@ -414,12 +414,33 @@ public final class DBNinja {
 
     }
 	    
-/*
     private static Discount getDiscount()  throws SQLException, IOException
     {
 
         //add code to get a discount
-	String query = "Select DNAME From 
+	String query = "Select * From DISCOUNT;";
+	    
+	Statement stmt = conn.createStatement();
+        try {
+            ResultSet rset = stmt.executeQuery(query);
+            //even if you only have one result, you still need to call ResultSet.next() to load the first tuple
+            while(rset.next())
+            {
+		    			String ID = rset.getString(1);
+					String dname = rset.getString(2);
+					double percent = rset.getDouble(3);
+					double dollar = rset.getDouble(4);
+					
+					D = new Discount(dname, percent, dollar, ID);
+			}
+			
+		}
+		catch (SQLException e) {
+            System.out.println("Error loading Discount");
+            while (e != null) {
+                System.out.println("Message     : " + e.getMessage());
+                e = e.getNextException();
+            }
 
         Discount D;
 
@@ -455,12 +476,12 @@ public final class DBNinja {
 
         //add code to get an order. Remember, an order has pizzas, a customer, and discounts on it
 
-
         Order O;
+	    
+	
 
         return O;
 
     }
-    */
 
 }
