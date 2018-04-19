@@ -19,7 +19,7 @@ public class Discount {
     private String name;
     private double percent_off;
     private double cash_off;
-    private int ID;
+    private String ID;
 
     /**
      *
