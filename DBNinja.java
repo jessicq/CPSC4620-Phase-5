@@ -476,14 +476,12 @@ public final class DBNinja {
 			
 		}
 		catch (SQLException e) {
-            System.out.println("Error loading Discount");
+            System.out.println("Error loading Pizza");
             while (e != null) {
                 System.out.println("Message     : " + e.getMessage());
                 e = e.getNextException();
             }
    
-	
-
         return P;
 
     }
@@ -493,8 +491,9 @@ public final class DBNinja {
 
         //add code to get customer
 
-
         ICustomer C;
+	    
+	
 
         return C;
 
