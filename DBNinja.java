@@ -154,7 +154,7 @@ public final class DBNinja {
                 //String status = rset.getString(4);
                 if(rset.next() == "in-progress")
                 {
-                    query = "Update PIZZA Set STATUS = complete Where"; //need to find out where to connect
+                    query = "Update PIZZA Set STATUS = 'complete'"; 
                     rs = stmt.executeQuery(query);
                 }
             }
@@ -196,8 +196,6 @@ public final class DBNinja {
                 System.out.println("Message     : " + e.getMessage());
                 e = e.getNextException();
             }
-		
-		
 		
 		
 	conn.close();
@@ -280,7 +278,7 @@ public final class DBNinja {
      */
     public static ArrayList<Order> getCurrentOrders() throws SQLException, IOException
     {
-	String query = "Select ORDERNO From CUSTOMERHASORDER, PIZZA Where  STATUS='complete'";
+	String query = "Select BT.ORDERNO From BELONGSTO As BT, PIZZA As P Where P.PID=BT.PID and STATUS='complete'";
 	    
         connect_to_db();
 
@@ -289,9 +287,7 @@ public final class DBNinja {
 	Statement stmt = conn.createStatement();
         try { 
 		while(rset.next())
-		{
 		   ResultSet rset = stmt.executeQuery(query); 
-		}
         catch (SQLException e) {
             System.out.println("Error updating topping inventory");
             while (e != null) {
