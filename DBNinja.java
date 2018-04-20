@@ -183,11 +183,24 @@ public final class DBNinja {
      */
     public static void AddToInventory(Topping t, double toAdd) throws SQLException, IOException
     {
- 	String query = "Update TOPPINGS Set INVENTORY = INVENTORY + " + toAdd + "Where NAME=Topping.Name" +  From TOPPINGS";
-	   // Look up Topping Name attribute to get the right attribute, currently substituting to Topping.Name
+ 	String query = "Update TOPPINGS Set INVENTORY = INVENTORY" + toAdd + "Where NAME=" + t.name + " From TOPPINGS";
+	   
         connect_to_db();
 		/*add code to add toAdd to the inventory level of T. This is not adding a new topping, it is adding a certain amount of stock for a topping. This would be used to show that an order was made to replenish the restaurants supply of pepperoni, etc*/
-        conn.close();
+        
+	Statement stmt = conn.createStatement();
+        try { ResultSet rset = stmt.executeQuery(query); }
+        catch (SQLException e) {
+            System.out.println("Error updataing topping inventory");
+            while (e != null) {
+                System.out.println("Message     : " + e.getMessage());
+                e = e.getNextException();
+            }
+		
+		
+		
+		
+	conn.close();
     }
 
 
