@@ -280,7 +280,7 @@ public final class DBNinja {
      */
     public static ArrayList<Order> getCurrentOrders() throws SQLException, IOException
     {
-	String query = "Select STATUS From PIZZA Where STATUS='complete'";
+	String query = "Select ORDERNO From CUSTOMERHASORDER, PIZZA Where  STATUS='complete'";
 	    
         connect_to_db();
 
