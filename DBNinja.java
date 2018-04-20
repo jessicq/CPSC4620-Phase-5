@@ -191,7 +191,7 @@ public final class DBNinja {
 	Statement stmt = conn.createStatement();
         try { ResultSet rset = stmt.executeQuery(query); }
         catch (SQLException e) {
-            System.out.println("Error updataing topping inventory");
+            System.out.println("Error updating topping inventory");
             while (e != null) {
                 System.out.println("Message     : " + e.getMessage());
                 e = e.getNextException();
@@ -280,9 +280,24 @@ public final class DBNinja {
      */
     public static ArrayList<Order> getCurrentOrders() throws SQLException, IOException
     {
+	String query = "Select STATUS From PIZZA Where STATUS='complete'";
+	    
         connect_to_db();
 
         ArrayList<Order> os = new ArrayList<Order>();
+	    
+	Statement stmt = conn.createStatement();
+        try { 
+		while(rset.next())
+		{
+		   ResultSet rset = stmt.executeQuery(query); 
+		}
+        catch (SQLException e) {
+            System.out.println("Error updating topping inventory");
+            while (e != null) {
+                System.out.println("Message     : " + e.getMessage());
+                e = e.getNextException();
+            }
 		/*add code to get a list of all open orders. Only return Orders that have not been completed. If any pizzas are not completed, then the order is open.*/
 
         conn.close();
