@@ -84,6 +84,11 @@ public final class DBNinja {
      */
     public static void addOrder(Order o) throws SQLException, IOException
     {
+	Random r = new Random();
+	int new_id = r.nextInt(99999999) + 1;
+	String stringID = Integer.toString(new_id);
+	   
+	o.ID = stringID;   
         String query = "Insert ONUM From ORDERS Value" + o.ID + ";";
 
         connect_to_db();
