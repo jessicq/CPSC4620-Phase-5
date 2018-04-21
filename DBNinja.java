@@ -156,7 +156,7 @@ public final class DBNinja {
     {
         String query = "Select STATUS 
 			From (PIZZA as P Join BELONGSTO as BT on P.PID=BT.PID) Join ORDERS as OR on BT.ORDERNO=OR.ONUM 
-			Where OR.ONUM=" + o.PID + ";";
+			Where OR.ONUM=" + o.ID + ";";
 
         connect_to_db();
 		/*add code to mark an order as complete in the DB. You may have a boolean field for this, or maybe a completed time timestamp. However you have it, */
