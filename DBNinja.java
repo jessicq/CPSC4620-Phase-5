@@ -22,11 +22,11 @@ This class also has static string variables for pickup, delivery and dine-in. If
 
 public final class DBNinja {
     //enter your user name here
-    private static String user = "Fart";
+    private static String user = "Fart"; //Username from Buffet
     //enter your password here
-    private static String password = "pizzadb4620";
+    private static String password = "pizzadb4620"; //
     //enter your database name here
-    private static String database_name = "antonpizza";
+    private static String database_name = "antonpizza500_je71";
     //Do not change the port. 3306 is the default MySQL port
     private static String port = "3306";
     private static Connection conn;
@@ -84,11 +84,12 @@ public final class DBNinja {
      */
     public static void addOrder(Order o) throws SQLException, IOException
     {
-        String query = "Insert ONUM From ORDER;";
+        String query = "Insert ONUM From ORDERS Value" + o.ID + ";";
 
         connect_to_db();
+	    
 		/* add code to add the order to the DB. Remember to add the pizzas and discounts as well, which will involve multiple tables. Customer should already exist. Toppings will need to be added to the pizzas.
-
+		
 		It may be beneficial to define more functions to add an individual pizza to a database, add a topping to a pizza, etc.
 
 		Note: the order ID will be -1 and will need to be replaced to be a fitting primary key.
@@ -100,8 +101,19 @@ public final class DBNinja {
 		You do not need to check to see if you have the topping in stock before adding to a pizza. You can just let it go negative.
 		*/
 
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
+	Statement stmt = conn.createStatement();
+        try {
+            ResultSet rs = stmt.executeQuery(query);
+		
+	    String order_no = rset.getString(1);
+	    if(order_no ) //might need a check to see if the orderno does not exist, but not sure because the database constraints checks it anyway
+        }
+        catch (SQLException e) {
+            System.out.println("Error adding an Order");
+            while (e != null) {
+                System.out.println("Message     : " + e.getMessage());
+                e = e.getNextException();
+            }
 
 
         conn.close();
