@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>CPSC 4620-002/Project Stage 5/jessicq | Browse</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <style media="all" type="text/css">@import "/static/style.css";</style>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" href="/static/handin/pygments.css">
+
+</head>
+<body>
+<div id="main">
+<a href="/" class="logo"><img src="/static/logo.png"  alt="Clemson School of Computing" /></a>
+  <div id="header">
+    <ul id="top-navigation">
+
+      <li class="active"><span><span><a href="/courses/">My Courses</a></span></span></li>
+      <li class=""><span><span><a href="/accounts/profile/">My Profile</a></span></span></li>
+  
+      <li class=""><span><span><a href="/help">Help</a></span></span></li>
+
+    </ul>
+  </div>
+  <div id="middle">
+    <div id="left-column">
+
+      <h3>Menu</h3>
+      <div id="menu">
+  
+        <ul>
+</ul>
+
+  
+      </div>
+  
+      <a href="/accounts/logout/" class="link">Logout</a>
+  
+
+    </div>
+    <div id="center-column">
+      <div class="top-bar">
+        <h1>Project Stage 5 &raquo; /jessicq/new_insert.txt</h1>
+      </div>
+      <br />
+      <div class="select-bar">
+        <div class="breadcrumbs">
+
+  
+          <a href='/courses/'>Courses</a> /
+  
+          <a href='/courses/1801/'>Spring 2018</a> /
+  
+          <a href='/courses/1801/cpsc4620-002/'>CPSC 4620-002</a> /
+  
+          <a href='/courses/1801/cpsc4620-002/assignments/'>Assignments</a> /
+  
+          <a href='/courses/1801/cpsc4620-002/assignments/Proj5/'>Project Stage 5</a> /
+  
+          <a href='/courses/1801/cpsc4620-002/assignments/Proj5/jessicq/browse/'>jessicq</a> /
+  
+
+        </div>
+      </div>
+
+  
+
+
+<div class="info">
+  
+    
+    <p>
+      
+        This version was received April 24, 2018 at 11:32 p.m..
+      
+    </p>
+    
+  
+</div>
+
+<div class="table">
+<img src="/static/images/bg-th-left.gif" width="8" height="7" alt="" class="left" />
+<img src="/static/images/bg-th-right.gif" width="7" height="7" alt="" class="right" />
+<table class="listing form" cellpadding="0" cellspacing="0">
+  <tr>
+    <th class="full" colspan="2">Assignment Info</th>
+  </tr>
+  <tr>
+    <td class="first" width="172"><strong>Open Date</strong></td>
+    <td class="last">April 19, 2018, 3:46 p.m.</td>
+  </tr>
+
+
+ <tr  class="bg">
+    <td class="first" width="172"><strong>Due Date</strong></td>
+    <td class="last">April 24, 2018, 11:59 p.m.</td>
+  </tr>
+
+
+  <tr>
+    <td class="first" width="172"><strong>Close Date</strong></td>
+    <td class="last">April 27, 2018, 12:59 p.m.</td>
+  </tr>
+
+
+    <tr>
+      <td class="first" width="172"><strong>Description</strong></td>
+      <td class="last">See the prompt on Canvas</td>
+    </tr>
+
+</table>
+</div>
+
+
+<div class="table">
+<img src="/static/images/bg-th-left.gif" width="8" height="7" alt="" class="left" />
+<img src="/static/images/bg-th-right.gif" width="7" height="7" alt="" class="right" />
+<table class="listing form" cellpadding="0" cellspacing="0">
+  <tr>
+    <th class="full" colspan="2">Bucket Info</th>
+  </tr>
+  
+  <tr class="bg">
+    <td class="first" width="172"><strong>Mercurial Repository URL</strong></td>
+    <td class="last"><input readonly onClick="this.select();" class="clone-url" type="text" value="ssh://handin@handin.cs.clemson.edu/1801/cpsc4620-002/assignments/Proj5/jessicq" /></td>
+  </tr>
+  <tr class="bg">
+    <td class="first" width="172"><strong>Full Bucket Name</strong></td>
+    <td class="last"><input readonly onClick="this.select();" class="copyable" type="text" value="1801/cpsc4620-002/Proj5/jessicq" /></td>
+  </tr>
+  
+
+</table>
+</div>
+
+
+
+<p><a href="?raw">Download</a></p>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</pre></div></td><td class="code"><div class="highlight"><pre>INSERT INTO PIZZA
+VALUES(0,29.75,3.68,&#39;Completed&#39;,&#39;L&#39;,&#39;Thin&#39;,000000009,&#39;0305-12:03&#39;),
+(1,11.85,3.01,&#39;Completed&#39;,&#39;M&#39;,&#39;Pan&#39;,000000007,&#39;0303-12:05&#39;),
+(2,5.93,1.16,&#39;Completed&#39;,&#39;S&#39;,&#39;Original&#39;,000000002,&#39;0303-12:05&#39;),
+(3,19.88,3.30,&#39;Completed&#39;,&#39;L&#39;,&#39;Original&#39;,000000010,&#39;0303-21:30&#39;),
+(4,19.88,3.30,&#39;Completed&#39;,&#39;L&#39;,&#39;Original&#39;,000000010,&#39;0303-21:30&#39;),
+(5,19.88,3.30,&#39;Completed&#39;,&#39;L&#39;,&#39;Original&#39;,000000010,&#39;0303-21:30&#39;),
+(6,19.88,3.30,&#39;Completed&#39;,&#39;L&#39;,&#39;Original&#39;,000000010,&#39;0303-21:30&#39;),
+(7,19.88,3.30,&#39;Completed&#39;,&#39;L&#39;,&#39;Original&#39;,000000010,&#39;0303-21:30&#39;),
+(8,19.88,3.30,&#39;Completed&#39;,&#39;L&#39;,&#39;Original&#39;,000000010,&#39;0303-21:30&#39;),
+(9,32.61,5.59,&#39;Completed&#39;,&#39;XL&#39;,&#39;Original&#39;,000000014,&#39;0305-19:11&#39;),
+(10,35.93,6.25,&#39;Completed&#39;,&#39;XL&#39;,&#39;Original&#39;,000000014,&#39;0305-19:11&#39;),
+(11,27.42,4.89,&#39;Completed&#39;,&#39;XL&#39;,&#39;Original&#39;,000000014,&#39;0305-19:11&#39;),
+(12,31.45,10.79,&#39;completed&#39;,&#39;XL&#39;,&#39;Glutenfree&#39;,000000016,&#39;0302-17:30&#39;),
+(13,25.81,3.25,&#39;Completed&#39;,&#39;L&#39;,&#39;Thin&#39;,000000009,&#39;0302-18:17&#39;),
+(14,25.90,2.75,&#39;Completed&#39;,&#39;L&#39;,&#39;Thin&#39;,000000009,&#39;0306-NA&#39;),
+(15,15.49,2.65,&#39;Completed&#39;,&#39;L&#39;,&#39;Thin&#39;,000000009,&#39;0306-NA&#39;);
+
+INSERT INTO ORDERS
+VALUES(100000000),(200000000),(300000000),(400000000),(500000000),(600000000),
+(700000000),(800000000);
+
+INSERT INTO CUSTOMER
+VALUES(1),(2),(3),(4),(5),(6),(7);
+
+INSERT INTO BELONGSTO
+VALUES(100000000,0),(200000000,1),(300000000,2),
+(400000000,3),(400000000,4),(400000000,5),
+(400000000,6),(400000000,7),(400000000,8),
+(500000000,9),(500000000,10),(500000000,11),
+(600000000,12),(700000000,13),(800000000,14),
+(800000000,15);
+
+INSERT INTO CUSTOMERHASORDER
+VALUES(1,100000000),(2,200000000),(3,300000000),
+(4,400000000),(4,500000000),(5,600000000),
+(6,700000000),(7,800000000);
+
+INSERT INTO APPLIEDTO
+VALUES(000000003,0,100000000),(000000002,1,200000000),
+(000000004,1,200000000),(000000005,9,500000000),
+(000000005,10,500000000),(000000005,11,500000000),
+(000000004,10,500000000),(000000004,12,600000000),
+(1,14,800000000),(1,15,800000000);
+
+INSERT INTO DINEIN
+VALUES(1,&#39;14&#39;),(2,&#39;4&#39;),(3,&#39;4&#39;);
+
+INSERT INTO SEATNUMBERS
+VALUES(1,&#39;1&#39;),(1,&#39;2&#39;),(1,&#39;3&#39;),(2,&#39;1&#39;),
+(3,&#39;2&#39;);
+
+INSERT INTO DELIVERY
+VALUES(&#39;NA&#39;,&#39;Andrew&#39;,&#39; &#39;,&#39;Wilkes-Krier&#39;,&#39;115 Party Blvd, Anderson SC 29621&#39;,4),
+(&#39;8642328944&#39;,&#39;Frank&#39;,&#39; &#39;,&#39;Turner&#39;,&#39;6745 Wessex St, Anderson SC 29621&#39;,6),
+(&#39;8648785679&#39;,&#39;Milo&#39;,&#39; &#39;,&#39;Auckerman&#39;,&#39;8879 Suburban Home, Anderson, SC 29621&#39;,7);
+
+INSERT INTO PICKUP
+VALUES(&#39;8642545861&#39;,&#39;Andrew&#39;,&#39; &#39;,&#39;Wilkes-Krier&#39;,4),
+(&#39;8644749953&#39;,&#39;Matt&#39;,&#39; &#39;,&#39;Engers&#39;,5);
+
+INSERT INTO PIZZAHASTOPPINGS
+VALUES (13,&#39;RegularCheese&#39;,0,&#39;Yes&#39;),(1,&#39;Pepperoni&#39;,0,&#39;No&#39;),
+(2,&#39;Sausage&#39;,0,&#39;No&#39;),(15,&#39;FetaCheese&#39;,1,&#39;No&#39;),(9,&#39;BlackOlives&#39;,1,&#39;No&#39;),
+(7,&#39;RomaTomato&#39;,1,&#39;No&#39;),(8,&#39;Mushrooms&#39;,1,&#39;No&#39;),(12,&#39;BananaPeppers&#39;,1,&#39;No&#39;),
+(4,&#39;Chicken&#39;,2,&#39;No&#39;),(12,&#39;BananaPeppers&#39;,2,&#39;No&#39;),(13,&#39;RegularCheese&#39;,3,&#39;No&#39;),
+(1,&#39;Pepperoni&#39;,3,&#39;No&#39;),(13,&#39;RegularCheese&#39;,4,&#39;No&#39;),(1,&#39;Pepperoni&#39;,4,&#39;No&#39;),
+(13,&#39;RegularCheese&#39;,5,&#39;No&#39;),(1,&#39;Pepperoni&#39;,5,&#39;No&#39;),(13,&#39;RegularCheese&#39;,6,&#39;No&#39;),
+(1,&#39;Pepperoni&#39;,6,&#39;No&#39;),(13,&#39;RegularCheese&#39;,7,&#39;No&#39;),(1,&#39;Pepperoni&#39;,7,&#39;No&#39;),
+(13,&#39;RegularCheese&#39;,8,&#39;No&#39;),(1,&#39;Pepperoni&#39;,8,&#39;No&#39;),(1,&#39;Pepperoni&#39;,9,&#39;No&#39;),
+(2,&#39;Sausage&#39;,9,&#39;No&#39;),(3,&#39;Ham&#39;,10,&#39;Yes&#39;),(10,&#39;Pineapple&#39;,10,&#39;Yes&#39;),
+(11,&#39;Jalapenos&#39;,11,&#39;No&#39;),(17,&#39;Bacon&#39;,11,&#39;No&#39;),(14,&#39;FourCheeseBlend&#39;,9,&#39;No&#39;),
+(14,&#39;FourCheeseBlend&#39;,10,&#39;No&#39;),(14,&#39;FourCheeseBlend&#39;,11,&#39;No&#39;),
+(5,&#39;GreenPepper&#39;,12,&#39;No&#39;),(6,&#39;Onion&#39;,12,&#39;No&#39;),(7,&#39;RomaTomato&#39;,12,&#39;No&#39;),
+(8,&#39;Mushrooms&#39;,12,&#39;No&#39;),(9,&#39;BlackOlives&#39;,12,&#39;No&#39;),(16,&#39;GoatCheese&#39;,12,&#39;No&#39;),
+(4,&#39;Chicken&#39;,13,&#39;No&#39;),(5,&#39;GreenPepper&#39;,13,&#39;No&#39;),(6,&#39;Onion&#39;,13,&#39;No&#39;),
+(8,&#39;Mushrooms&#39;,13,&#39;No&#39;),(14,&#39;FourCheeseBlend&#39;,13,&#39;No&#39;),
+(14,&#39;FourCheeseBlend&#39;,&#39;14&#39;,&#39;Yes&#39;),(1,&#39;Pepperoni&#39;,&#39;15&#39;,&#39;Yes&#39;);
+</pre></div>
+</td></tr></table>
+
+
+    </div>
+    <div id="right-column">
+      <strong class="h">INFO</strong>
+      <div class="box">
+        
+        Webhandin allows students to submit assignments, and allows
+        instructors/graders more control.
+        
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+</div>
+
+</body>
+</html>
